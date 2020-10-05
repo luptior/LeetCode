@@ -1,0 +1,1 @@
+# Validate parentheses, possible values are: [ , ], <, > and self closing pipe |

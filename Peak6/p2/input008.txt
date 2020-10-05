@@ -1,0 +1,11 @@
+3
+Devilish
+Devilishly
+phone
+4
+Devilish:evil
+phone:cell,telephone
+decoy:facade,fake
+Devilishly:evil
+1
+decoy:truth,real
