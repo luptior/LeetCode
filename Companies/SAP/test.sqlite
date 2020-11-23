@@ -1,0 +1,6 @@
+SELECT TOP 1 UnitPrice
+FROM OrderDetails
+JOIN Orders
+ON OrderDetails.OrderID = Orders.OrderID
+WHERE Orders.CustomerID=HANNER
+ORDER BY UnitePrice;
