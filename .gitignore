@@ -2,8 +2,4 @@
 
 .idea
 .gitignore
-/Companies/BlackRock/
-/Companies/Citrix/
-/Companies/GoldmanSachs
-/Companies/Databricks
-/Companies/Citrix
+/Companies/
