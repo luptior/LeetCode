@@ -61,5 +61,5 @@ if __name__ == '__main__':
         last = ListNode(l[i], last)
 
     printlist(last)
-    s.reverseKGroup(last, 2)
+    printlist(s.reverseKGroup(last, 2))
     # print(s.reverseKGroup(last, 2))
