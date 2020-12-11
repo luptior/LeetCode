@@ -1,51 +1,32 @@
-# brute force
-# Runtime: 1012 ms, faster than 5.17% of Python3 online submissions for Merge Intervals.
-# Memory Usage: 16.3 MB, less than 15.64% of Python3 online submissions for Merge Intervals.
+# TODO
 
 class Solution:
     def merge(self, intervals: [[int]]) -> [[int]]:
 
-        result = intervals[:]
-
+        s = set([])
         for interval in intervals:
+            r = set(range(interval[0], interval[1]+1))
+            s = s | r
 
-            partial_merged = {}
-            for i, r in enumerate(result):
-                tmp = self.overlap(interval, r)
-                if tmp:
-                    partial_merged[i] = tmp
+        s = list(s)
+        s.sort()
 
-            print(partial_merged)
+        result = []
+        curr = []
 
-            if len(partial_merged) > 0:
-                min_k = min(partial_merged.keys())
-                values = list(partial_merged.values())
-                while len(values) > 1:
-                    val = values.pop()
-                    values[0] = self.overlap(values[0], val)
-                result[min_k] = values[0]
-
-                keys = list(partial_merged.keys())
-                keys.remove(min_k)
-
-                new_results = [ v for k,v in enumerate(result) if k not in keys]
-
-                result = new_results
+        for i, d in enumerate(s):
+            if not curr:
+                curr.append(d)
+            else:
+                if i < len(s)-1 and s[i+1] == d+1:
+                    continue
+                else:
+                    curr.append(d)
+                    result.append(curr)
+                    curr = []
 
         return result
 
-    def overlap(self, interval1, interval2):
-        x1, y1 = interval1
-        x2, y2 = interval2
-
-        r1 = set(range(x1, y1+1))
-        r2 = set(range(x2, y2+1))
-
-        if len(r1 & r2) == 0:
-            return []
-        else:
-            r1 = r1 | r2
-            return [min(r1), max(r1)]
 
 
 if __name__ == '__main__':
