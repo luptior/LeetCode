@@ -29,8 +29,8 @@ class Solution:
         if k == 0:  # reached the end
             return tmp_ans, int("".join([str(x) for x in tmp_ans]))
 
-        if (k, index1, index2) in self.mem:
-            seq = self.mem[(k, index1, index2)]
+        if (k, index1, index2) in self.mem: # if can be found in memorization
+            seq = self.mem[(k, index1, index2)] # which store the sequence of chosen num after this step
 
             n = "".join([str(x) for x in (tmp_ans + seq)])
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     s = Solution()
 
     nums1 = [9, 1, 1, 0, 7, 8, 3, 9, 5, 3, 0, 7, 5, 7, 1, 8, 8, 3, 5, 7, 5, 2, 4, 7, 1, 2, 8, 9, 1, 6, 1, 1, 5, 6, 6, 1]
-    nums2 =[6, 5, 5, 0, 0, 0, 3, 7, 7, 8, 0, 9, 7, 7, 3, 5, 1, 4, 5, 5, 4, 5, 2]
+    nums2 = [6, 5, 5, 0, 0, 0, 3, 7, 7, 8, 0, 9, 7, 7, 3, 5, 1, 4, 5, 5, 4, 5, 2]
     k = 59
 
     print(s.maxNumber(nums1, nums2, k))
