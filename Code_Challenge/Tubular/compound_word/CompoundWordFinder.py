@@ -2,15 +2,20 @@ import sys
 
 
 def word_finder(words: list) -> []:
+    """
+    :param words: list of words in string format
+    :return: list of compound words
+    """
+
     # preprocess by strip(), O(N)
-    wordset = set([word.strip() for word in words])
+    words_set = set([word.strip() for word in words])
 
     result = []
 
-    for word in wordset:
+    for word in words_set:
         for i in range(1, len(word)):
             # print(word[:i], word[i:])
-            if word[:i] in wordset and word[i:] in wordset:
+            if word[:i] in words_set and word[i:] in words_set:
                 result.append(word)
                 break
 
