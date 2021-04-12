@@ -35,7 +35,4 @@ if __name__ == '__main__':
 
     # print result to stdout, reformat last line based on input
     for i, e in enumerate(result):
-        if i < len(result) or i == len(result) - 1 and endline_settings:
-            print(e)
-        else:
-            print(e, end='')
+        print(e, end="\n" if i == len(result) - 1 and endline_settings or i < len(result) else '')
