@@ -30,8 +30,10 @@ if __name__ == '__main__':
     # a setting option: if input file has empty eof line, assume output file should have the same format
     endline_settings = "\n" in data[-1]
 
+    # use defined function to return the result
     result = word_finder(data)
 
+    # print result to stdout, reformat last line based on input
     for i, e in enumerate(result):
         if i == len(result) - 1:
             print(e, end="\n" if endline_settings else '')
