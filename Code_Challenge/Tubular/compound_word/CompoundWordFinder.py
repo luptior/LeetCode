@@ -3,14 +3,14 @@ import sys
 
 def word_finder(words: list) -> []:
     # preprocess by strip(), O(N)
-    words = set([word.strip() for word in words])
+    wordset = set([word.strip() for word in words])
 
     result = []
 
-    for word in words:
+    for word in wordset:
         for i in range(1, len(word)):
             # print(word[:i], word[i:])
-            if word[:i] in data and word[i:] in data:
+            if word[:i] in wordset and word[i:] in wordset:
                 result.append(word)
                 break
 
