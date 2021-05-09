@@ -1,3 +1,6 @@
+import bisect
+
+
 def search(arr, target):
 
     left = 0
@@ -14,8 +17,12 @@ def search(arr, target):
         else:
             return mid
 
+def search2(arr, target):
+
+    return bisect.bisect_left(arr, target)
+
 
 if __name__ == '__main__':
-    s = [1,2,3,4,5,6,7,8]
+    s = [1,2,3,5,6,7,8]
 
-    print(search(s, 4))
+    print(search2(s, 5))
