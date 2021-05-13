@@ -23,3 +23,15 @@ def decimalToBinary(testVariable):
     result[ctr:] = list(decimalToBinary(testVariable - 2 ** curr))
 
     return "".join(result)
+
+
+# better solution
+def decimalToBinary2(testVariable):
+    # Base Case
+    if testVariable <= 1:
+        return str(testVariable)
+
+    # Recursive Case
+    else:
+        return decimalToBinary(testVariable // 2) + decimalToBinary(testVariable % 2)  # Floor division -
+        # division that results into whole number adjusted to the left in the number line
