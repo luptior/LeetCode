@@ -23,7 +23,7 @@ class Solution:
         result.append(median(tmp))
 
         for i in range(1, len(nums) - k + 1):
-            del tmp[bisect.bisect_left(tmp, nums[i-1])]
+            tmp.pop(bisect.bisect_left(tmp, nums[i - 1]))
             bisect.insort(tmp, nums[i + k - 1])
 
             result.append(median(tmp))
