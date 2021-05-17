@@ -25,17 +25,16 @@ class Solution:
         #
         # DFS matching function:
         @lru_cache(None)
-        def dfs(i, word, L, used):
+        def dfs(i, word, L):
 
             # print(i, word, L)
             if i == L:
                 return True
             #
-            used_set = set(used.split("\n"))
 
             for a in getsizes(L - i, i):
                 substr = word[i:i + a]
-                if substr in words and dfs(i + a, word, L, used + f"\n{substr}"):
+                if substr in words and dfs(i + a, word, L):
                     return True
             return False
 
@@ -43,7 +42,7 @@ class Solution:
         # Final Loop:
         res = []
         for word in words:
-            if dfs(0, word, len(word), ""):
+            if dfs(0, word, len(word)):
                 res.append(word)
         #
         return res
