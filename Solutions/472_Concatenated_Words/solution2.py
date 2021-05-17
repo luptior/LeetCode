@@ -1,3 +1,8 @@
+"""
+Runtime: 420 ms, faster than 86.37% of Python3 online submissions for Concatenated Words.
+Memory Usage: 19.9 MB, less than 61.92% of Python3 online submissions for Concatenated Words.
+"""
+
 from functools import lru_cache
 from typing import List
 
@@ -5,7 +10,7 @@ from typing import List
 class Solution:
     def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
 
-        words = [word for word in words if word]
+        words = set([word for word in words if word])
 
         nlens = sorted(set(map(len, words)))
 
